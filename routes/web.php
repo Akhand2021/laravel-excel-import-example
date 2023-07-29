@@ -17,7 +17,9 @@ use App\Http\Controllers\ExcelImportController;
 Route::get('/', function () {
     return view('welcome');
 });
-// routes/web.php
+
 Route::get('/upload', [ExcelImportController::class, 'importForm']);
 Route::post('/import', [ExcelImportController::class,'import'])->name('import');
+Route::get('/download', [ExcelImportController::class,'download'])->name('download');
+
 

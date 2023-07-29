@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Maatwebsite\Excel\Facades\Excel;
-use App\Imports\ExcelImportClass; 
+use App\Imports\ExcelImportClass;
+use App\Exports\ExcelExportClass;
 use Illuminate\Http\Request;
 use App\Models\Employee;
+use Illuminate\Support\Facades\Session; 
 
 class ExcelImportController extends Controller
 {
@@ -34,4 +36,12 @@ class ExcelImportController extends Controller
 
         return redirect()->back()->with('error', 'No file was uploaded.');
     }
+
+    public function download()
+    {
+        $employees = Employee::all();
+    
+        return Excel::download(new ExcelExportClass($employees), 'employees.xlsx');
+    }
+    
 }

@@ -30,9 +30,9 @@
         </form>
 
         <p class="upload-message">Supported file formats: .xlsx, .xls</p>
-
+          
         @if (count($employees) > 0)
-            <h3>Inserted Data:</h3>
+            <h3>Inserted Data:   <a href="{{ route('download') }}" class="custom-file-download">Download Excel</a></h3>
             <table>
                 <thead>
                     <tr>

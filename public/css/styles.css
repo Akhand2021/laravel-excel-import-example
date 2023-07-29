@@ -59,7 +59,9 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: background-color 0.2s ease-in-out;
   }
-  
+  .custom-file-download{
+    float: right;
+  }
   /* Hover styles for the upload button */
   .custom-btn-upload:hover {
     background-color: hwb(115 0% 71%); /* New background color on hover */
