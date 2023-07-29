@@ -1,4 +1,4 @@
-# Laravel Excel Import Example
+# Laravel Excel Import/Export Example
 
 This is a simple example project to demonstrate how to import Excel files in Laravel using the `maatwebsite/excel` library. It allows you to upload an Excel file containing employee data, which is then imported into the database and displayed on the upload page.
 
@@ -89,4 +89,5 @@ This project uses the [Laravel](https://laravel.com/) framework and the [maatweb
 Thank you for using the `laravel-excel-import-example` project! If you have any questions or feedback, please feel free to open an issue or submit a pull request. Happy coding!
 
 ![image](https://github.com/Akhand2021/laravel-excel-import-example/assets/104663417/c709b755-14f5-4ea0-844b-0100231e0a70)
-![image](https://github.com/Akhand2021/laravel-excel-import-example/assets/104663417/cbc969bb-7829-46c1-ab93-502a5205bb7b)
+![image](https://github.com/Akhand2021/laravel-excel-import-example/assets/104663417/5d56cb9f-81c5-4313-9353-1b04a2197341)
+
