@@ -1,18 +1,22 @@
 <!-- resources/views/upload.blade.php -->
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Upload Excel</title>
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
 </head>
+
 <body>
     <div class="container">
         <h2>Upload Excel File</h2>
 
-        @if(Session::has('success'))
+        @if (Session::has('success'))
             <div class="success-message fade-out">{{ Session::get('success') }}</div>
         @endif
-
+        @if (Session::has('error'))
+        <div class="error-message">{{ Session::get('error') }}</div>
+        @endif
         <form action="{{ route('import') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <label class="custom-file-upload">
@@ -20,11 +24,14 @@
                 <input type="file" name="excel_file" accept=".xlsx, .xls">
             </label>
             <button type="submit" class="custom-btn-upload">Upload</button>
+            @if ($errors->has('excel_file'))
+                <div class="error-message">{{ $errors->first('excel_file') }}</div>
+            @endif
         </form>
 
         <p class="upload-message">Supported file formats: .xlsx, .xls</p>
 
-        @if(count($employees) > 0)
+        @if (count($employees) > 0)
             <h3>Inserted Data:</h3>
             <table>
                 <thead>
@@ -35,7 +42,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($employees as $employee)
+                    @foreach ($employees as $employee)
                         <tr>
                             <td>{{ $employee->name }}</td>
                             <td>{{ $employee->email }}</td>
@@ -57,4 +64,5 @@
         }, 3000);
     </script>
 </body>
+
 </html>

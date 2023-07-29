@@ -50,6 +50,7 @@ body {
 .custom-btn-upload {
     display: inline-block;
     padding: 10px 20px;
+    margin-bottom: 5px;
     cursor: pointer;
     background-color: hwb(115 0% 71%); /* New background color */
     color: #fff; /* New text color */
@@ -79,7 +80,10 @@ body {
     border-radius: 5px;
     margin-top: 10px;
   }
-  
+  .error-message{
+    text-align: center;
+    color: red;
+  }
   /* Animation to auto-hide the success message after a few seconds */
   @keyframes fadeOut {
     from { opacity: 1; }
